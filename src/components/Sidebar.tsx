@@ -1,6 +1,5 @@
 import { sidebarMenu } from "../lib/menu";
 import { useTranslation } from "react-i18next";
-import { useCombobox } from '@mantine/core';
 import { Icon } from "@iconify/react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,9 +10,6 @@ type CompsProps = {
 
 function Sidebar({ clickableItem, setClickableItem }: CompsProps) {
     const { t } = useTranslation()
-    const combobox = useCombobox({
-        onDropdownClose: () => combobox.resetSelectedOption(),
-    });
     const location = useLocation();
     return (
         <>

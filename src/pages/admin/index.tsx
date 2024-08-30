@@ -130,7 +130,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="mt-4">
-                    <MedicalHistoryTable />
+                    <MedicalHistoryTable data_count={10} />
                 </div>
             </div>
         </>
