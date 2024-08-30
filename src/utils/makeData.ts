@@ -18,6 +18,21 @@ export const generateFakeMedicalHistories = (count: number): MedicalHistory[] =>
     }
     return medicalHistories;
 }
+export const generateFakeMessageItems = (count: number): MessageItem[] => {
+    const messageItems: MessageItem[] = [];
+    for (let i = 0; i < count; i++) {
+        messageItems.push({
+            id: faker.number.int(),
+            text: faker.lorem.sentence(),
+            sender: faker.internet.email(),
+            full_name: faker.person.fullName(),
+            avatar: faker.image.avatar(),
+            dateTime: faker.date.recent().toISOString(), // Recent date
+            unread_messages_count: faker.number.int({ min: 0, max: 20 }), // Random count of unread messages
+        });
+    }
+    return messageItems;
+}
 export const generateFakePastNotesAppointments = (count: number): PastNotesAppointmentType[] => {
     const pastNotesAppointments: PastNotesAppointmentType[] = [];
     for (let i = 0; i < count; i++) {
