@@ -99,7 +99,9 @@ export default function Home() {
                         <DashboardBars />
                     </div>
                     <div className="w-1/3">
-                        <div className="p-5 pt-3 bg-white border border-gray-300 rounded-md">
+                        <div className="p-5 pt-3 bg-white border border-gray-300 rounded-md" style={{
+                            borderRadius: 8
+                        }}>
                             <HeaderTitle
                                 size='xs'
                                 bordered={false}
@@ -115,7 +117,9 @@ export default function Home() {
                                 <h2 className="text-[#192252] font-bold">{t("Upcoming")}</h2>
                                 <Link className="text-xs font-semibold text-blue-600 underline" to='/'>{t("View All")}</Link>
                             </div>
-                            <div className="flex items-center py-2 gap-2 rounded-md bg-[#F0F9FD] p-4">
+                            <div style={{
+                                borderRadius: 8
+                            }} className="flex items-center py-2 gap-2 rounded-md bg-[#F0F9FD] p-4">
                                 <div className="flex items-center justify-center w-10 h-10 rounded-full font-bold text-white bg-[#2952CC]">M</div>
                                 <div className="w-[calc(100%-40px)]">
                                     <h2 className="text-[#192252] font-semibold">{t("Montly doctor’s meet")}</h2>
