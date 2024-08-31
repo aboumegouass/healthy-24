@@ -3,6 +3,7 @@ import { t } from "i18next";
 import PatientsFilter from "../../components/Patient/PatientsFilter";
 import PatientCard from "../../components/Patient/PatientCard";
 import { generateFakePatients } from "../../utils/makeData";
+import { Divider, Pagination, Space } from "@mantine/core";
 
 export default function Home() {
     const getPatients = generateFakePatients(20)
@@ -22,6 +23,16 @@ export default function Home() {
                             <PatientCard patient_data={patient} />
                         </div>
                     ))}
+                </div>
+                <Space h={'lg'} />
+                <Divider />
+                <Space h={'lg'} />
+                <div className="flex justify-end">
+                    <Pagination
+                        total={5}
+                        radius="md"
+                        classNames={{ control: 'border-0' }}
+                    />
                 </div>
             </div>
         </>

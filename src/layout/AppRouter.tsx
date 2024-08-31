@@ -12,6 +12,7 @@ import ProfilePage from '../pages/profile'
 import RegisterPage from '../pages/auth/register'
 import SendOTPPage from '../pages/auth/send-otp'
 import ResetPasswordPage from '../pages/auth/reset'
+import AppointmentsPage from '../pages/appointments'
 import EditProfilePage from '../pages/profile/edit'
 import MessagesLayout from "./MessagesLayout"
 
@@ -27,6 +28,7 @@ function AppRouter() {
             <Route path="/" element={<AdminLayout />}>
                 <Route path={`/home`} element={<Home />} />
                 <Route path={`/patients-list`} element={<PatientsList />} />
+                <Route path={`/appointments`} element={<AppointmentsPage />} />
                 <Route element={<MessagesLayout />}>
                     <Route path={`/messages`} element={<MessagesPage />} />
                     <Route path={`/messages/:id`} element={<MessageDetailsPage />} />

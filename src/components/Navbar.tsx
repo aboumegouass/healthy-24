@@ -112,7 +112,7 @@ function Navbar({ showMenu, setShowMenu }: CompProps) {
                         </Popover>
                     </Indicator>
 
-                    <ActionIcon className='text-gray-500' onClick={() => setIsNotification((o) => !o)} size={'37px'} variant="transparent">
+                    <ActionIcon className='text-gray-500' onClick={() => navigate('/profile/edit')} size={'37px'} variant="transparent">
                         <Icon className='w-5 h-5' icon={"solar:settings-linear"} />
                     </ActionIcon>
                     <Menu shadow="md" width={200}>
@@ -126,20 +126,21 @@ function Navbar({ showMenu, setShowMenu }: CompProps) {
                         </Menu.Target>
 
                         <Menu.Dropdown>
-                            <Menu.Label>Application</Menu.Label>
+                            <Menu.Label>{t("Application")}</Menu.Label>
                             <Menu.Item onClick={() => navigate('/profile')} leftSection={<Icon className='w-5 h-5' icon="solar:user-id-broken" />}>
-                                Profile
+                                {t("Profile")}
                             </Menu.Item>
-                            <Menu.Item leftSection={<Icon className='w-5 h-5' icon="solar:settings-broken" />}>
-                                Settings
+                            <Menu.Item onClick={() => navigate('/profile/edit')} leftSection={<Icon className='w-5 h-5' icon="solar:settings-broken" />}>
+                                {t("Settings")}
                             </Menu.Item>
 
                             <Menu.Divider />
                             <Menu.Item
+                                onClick={() => navigate('/login')}
                                 color="red"
                                 leftSection={<Icon className='w-5 h-5' icon="solar:logout-2-broken" />}
                             >
-                                Logout
+                                {t("Logout")}
                             </Menu.Item>
                         </Menu.Dropdown>
                     </Menu>
