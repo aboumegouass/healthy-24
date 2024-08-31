@@ -2,17 +2,16 @@ import { ScrollArea, Space, TextInput } from "@mantine/core"
 import HeaderTitle from "../HeaderTitle"
 import { t } from "i18next"
 import { Icon } from "@iconify/react"
-import MessageItem from "./MessageItem"
+import UserMessageItem from "./UserMessageItem"
 
 type CompsProps = {
-    clickableItem?: string
-    setClickableItem?: (clickableItem: string) => void
     data: MessageItem[]
+    pathname: string
 }
 
-function MessagesSidebar({ clickableItem, setClickableItem, data }: CompsProps) {
+function MessagesSidebar({ data, pathname }: CompsProps) {
     return (
-        <div>
+        <div className="sticky top-0">
             <div className="p-2">
                 <HeaderTitle
                     size='md'
@@ -29,9 +28,9 @@ function MessagesSidebar({ clickableItem, setClickableItem, data }: CompsProps) 
                 />
                 <Space h={'lg'} />
                 <div>
-                    <ScrollArea h={500}>
+                    <ScrollArea h={'66vh'}>
                         {data?.map((item) => (
-                            <MessageItem item={item} key={item.id} />
+                            <UserMessageItem active={pathname == `/messages/${item.id}`} item={item} key={item.id} />
                         ))}
                     </ScrollArea>
                 </div>

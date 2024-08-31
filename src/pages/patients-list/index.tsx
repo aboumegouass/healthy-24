@@ -16,7 +16,7 @@ export default function Home() {
                     title="Patients list"
                 />
                 <PatientsFilter />
-                <div className="grid grid-cols-4 gap-4 mt-4">
+                <div className="grid grid-cols-4 max-sm:grid-cols-1 gap-4 mt-4">
                     {getPatients.map((patient) => (
                         <div key={patient.id}>
                             <PatientCard patient_data={patient} />

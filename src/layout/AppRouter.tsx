@@ -5,6 +5,7 @@ import AdminLayout from "./AdminLayout"
 import PatientsList from '../pages/patients-list'
 import PatientsDetails from '../pages/patients-list/patient'
 import MessagesPage from '../pages/messages'
+import MessageDetailsPage from '../pages/messages/message'
 import MedicalHistoryPage from '../pages/medical-history'
 import LoginLayout from "./LoginLayout"
 import MessagesLayout from "./MessagesLayout"
@@ -19,6 +20,7 @@ function AppRouter() {
                 <Route path={`/patients-list`} element={<PatientsList />} />
                 <Route element={<MessagesLayout />}>
                     <Route path={`/messages`} element={<MessagesPage />} />
+                    <Route path={`/messages/:id`} element={<MessageDetailsPage />} />
                 </Route>
                 <Route path={`/medical-history`} element={<MedicalHistoryPage />} />
                 <Route path={`/patients-list/:id`} element={<PatientsDetails />} />

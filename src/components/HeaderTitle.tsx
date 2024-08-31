@@ -41,7 +41,7 @@ function HeaderTitle({ title, children, uppercase = false, bordered = true, size
         }
     }
     return (
-        <div className={`flex items-center justify-between ${switchPaddingSize()} px-0 mb-3 ${bordered ? "border-b-2" : "border-b-0"} max-sm:flex-col max-sm:gap-2 border-slate-300 dark:border-slate-800`}>
+        <div className={`flex items-center justify-between ${switchPaddingSize()} px-0 mb-3 ${bordered ? "border-b-2" : "border-b-0"} max-sm:gap-2 border-slate-300 dark:border-slate-800`}>
             <h2 className={`${switchSize()} font-extrabold text-slate-600 dark:text-slate-100 ${uppercase ? 'uppercase' : ''}`}>{t(title)}</h2>
             {children}
         </div>

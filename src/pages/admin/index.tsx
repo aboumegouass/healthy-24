@@ -1,8 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Group, Paper, Text, Table, Progress, Anchor, Space, Indicator } from '@mantine/core';
 import DashboardBars from "../../components/Statistics/DashboardBars";
-import Clients from "../../components/Statistics/TopTables/Clients";
-import Products from "../../components/Statistics/TopTables/Products";
 import '@mantine/charts/styles.css';
 import { Calendar } from 'react-date-range';
 import HeaderTitle from "../../components/HeaderTitle";
@@ -92,13 +90,13 @@ export default function Home() {
     }
     return (
         <>
-            <div className="p-4 bg-white border border-t-0 border-gray-300">
-                <div className="flex gap-4 mt-4">
-                    <div className="w-2/3">
+            <div className="p-4 max-sm:p-2 bg-white border border-t-0 border-gray-300">
+                <div className="flex gap-4 max-sm:flex-col mt-4">
+                    <div className="w-2/3 max-sm:w-full">
                         <h1 className="font-extrabold text-[#192252] text-xl">{'Welcome back Dr. Taylor!'}</h1>
                         <DashboardBars />
                     </div>
-                    <div className="w-1/3">
+                    <div className="w-1/3 max-sm:w-full">
                         <div className="p-5 pt-3 bg-white border border-gray-300 rounded-md" style={{
                             borderRadius: 8
                         }}>
@@ -110,6 +108,7 @@ export default function Home() {
                                 children={<div><Icon icon={`ph:caret-down`} /></div>}
                             />
                             <Calendar
+                                className="w-full"
                                 date={new Date()}
                                 onChange={handleSelect}
                             />
@@ -129,7 +128,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 w-full">
                     <MedicalHistoryTable data_count={10} />
                 </div>
             </div>

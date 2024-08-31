@@ -4,16 +4,6 @@ export const removeComma = (number: any) => {
   return parseFloat(newNumber)
 }
 
-export const dinarFormat = (price: any) => {
-  if (!price && price !== 0) return null
-  return new Intl.NumberFormat('fr-FR', {
-    style: 'currency',
-    currency: 'DZD',
-    currencySign: 'accounting',
-  })
-    .format(removeComma(price))
-    .replace(' ', ' ')
-}
 export const formatCurrencyDZD = (value: number, formater?: any) => {
 
   if (isNaN(value)) {
