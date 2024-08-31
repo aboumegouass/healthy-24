@@ -13,6 +13,7 @@ export default function Index() {
     const formik = useFormik({
         initialValues: {
             email: '',
+            fullname: '',
             password: ''
         },
         onSubmit: async (values) => {
@@ -22,16 +23,30 @@ export default function Index() {
     return (
         <>
             <Helmet>
-                <title>{t("Login")} | Raabit</title>
+                <title>{t("Register")} | Raabit</title>
             </Helmet>
             <div className="flex max-sm:flex-col">
                 <div className="w-1/2 max-sm:w-full">
                     <div className="p-6 mx-20">
                         <div className="mb-4">
-                            <h2 className="text-[#192252] text-2xl font-semibold flex items-center gap-2">{t("Welcome To Healthy 24")} <img src="/log_hand.png" className="w-9" /></h2>
-                            <p className="text-[#9b9da7] text-sm font-light">{t("Enter your account to use healthy 24 service")}</p>
+                            <h2 className="text-[#192252] text-2xl font-semibold flex items-center gap-2">{t("Sing up your account")} <img src="/log_hand2.png" className="w-9" /></h2>
+                            <p className="text-[#9b9da7] text-sm font-light">{t("Let’s Enter your data to continue use healthy 24 services")}</p>
                         </div>
                         <form onSubmit={formik.handleSubmit}>
+                            <div>
+                                <TextInput
+                                    size="sm"
+                                    withAsterisk
+                                    label={t("Full name")}
+                                    value={formik.values.fullname}
+                                    name='fullname'
+                                    error={formik.errors.fullname}
+                                    onChange={formik.handleChange}
+                                    placeholder={`${t("Enter Your name here")}`}
+                                    classNames={{ input: "ring-1 ring-slate-300 focus:ring-1 focus:ring-gray-800", label: 'mb-0' }}
+                                />
+                            </div>
+                            <Space h={'sm'} />
                             <div>
                                 <TextInput
                                     size="sm"
@@ -63,15 +78,12 @@ export default function Index() {
                             <div className="flex justify-between mt-3 items-center">
                                 <Checkbox
                                     size="xs"
-                                    label={t("Remember me")}
+                                    label={<>{t("by sign up to healthy 24 you agree all")} <Link className="font-bold" to={'/'}>{t("term")}</Link> {t("and")} <Link className="font-bold" to={'/'}>{t("condition")}</Link></>}
                                 />
-                                <Link to={`/auth/reset`} className="font-bold text-[#192252] text-xs">
-                                    {t("Forget password?")}
-                                </Link>
                             </div>
                             <div className="mt-10">
                                 <Button className="w-full bg-[#192252] hover:bg-[#161a35] text-sm" radius={10} size="lg" type="submit">
-                                    {t("Sign in")}
+                                    {t("Sign Up")}
                                 </Button>
                             </div>
                         </form>
@@ -80,14 +92,14 @@ export default function Index() {
                         </div>
                         <div className="flex justify-center flex-col gap-2 py-2">
                             <Button variant="outline" className="w-full flex justify-center gap-3 items-center text-gray-800 hover:text-gray-950 border border-gray-300 bg-[#fbfbfc] hover:bg-[#fdfdff] text-sm" radius={10} size="lg" type="submit">
-                                <IconBrandGoogleFilled style={{ width: '50%', height: '50%' }} stroke={1} /> <span className="mx-2">{t("Sign in with Google")}</span>
+                                <IconBrandGoogleFilled style={{ width: '50%', height: '50%' }} stroke={1} /> <span className="mx-2">{t("Sign up with Google")}</span>
                             </Button>
                             <Button variant="outline" className="w-full flex justify-center gap-3 items-center text-gray-800 hover:text-gray-950 border border-gray-300 bg-[#fbfbfc] hover:bg-[#fdfdff] text-sm" radius={10} size="lg" type="submit">
-                                <IconBrandFacebookFilled style={{ width: '50%', height: '50%' }} stroke={1} /> <span className="mx-2">{t("Sign in with Facebook")}</span>
+                                <IconBrandFacebookFilled style={{ width: '50%', height: '50%' }} stroke={1} /> <span className="mx-2">{t("Sign up with Facebook")}</span>
                             </Button>
                         </div>
                         <div className="flex justify-center mt-5">
-                            <p className="text-sm text-[#192252]">{t("You don’thave account ?")} <Link className="font-bold" to={'/auth/register'}>{t("Sign up")}</Link></p>
+                            <p className="text-sm text-[#192252]">{t("You Already have account?")} <Link className="font-bold" to={'/login'}>{t("Sign in")}</Link></p>
                         </div>
                     </div>
                 </div>

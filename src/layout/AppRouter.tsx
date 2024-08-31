@@ -9,6 +9,7 @@ import MessageDetailsPage from '../pages/messages/message'
 import MedicalHistoryPage from '../pages/medical-history'
 import LoginLayout from "./LoginLayout"
 import ProfilePage from '../pages/profile'
+import RegisterPage from '../pages/auth/register'
 import EditProfilePage from '../pages/profile/edit'
 import MessagesLayout from "./MessagesLayout"
 function AppRouter() {
@@ -16,6 +17,7 @@ function AppRouter() {
         <Routes>
             <Route path="" element={<LoginLayout />}>
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/auth/register" element={<RegisterPage />} />
             </Route>
             <Route path="/" element={<AdminLayout />}>
                 <Route path={`/home`} element={<Home />} />
