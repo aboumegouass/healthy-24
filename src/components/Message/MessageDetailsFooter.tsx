@@ -4,7 +4,7 @@ import { t } from "i18next"
 
 function MessageDetailsFooter() {
     return (
-        <div className="flex sticky bottom-0 gap-3 border-t border-t-gray-200 p-4 items-center">
+        <div className="flex sticky bg-white bottom-0 gap-3 border-t border-t-gray-200 p-4 items-center">
             <div>
                 <ActionIcon className='text-[#1f274e]' size={'37px'} variant="transparent">
                     <Icon className='w-5 h-5' icon={"solar:document-text-linear"} />

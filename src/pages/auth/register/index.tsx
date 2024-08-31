@@ -24,7 +24,7 @@ export default function Index() {
             </Helmet>
             <div className="flex max-sm:flex-col">
                 <div className="w-1/2 max-sm:w-full">
-                    <div className="p-6 mx-20">
+                    <div className="p-6 mx-20 max-sm:mx-0">
                         <div className="mb-4">
                             <h2 className="text-[#192252] text-2xl font-semibold flex items-center gap-2">{t("Sing up your account")} <img src="/log_hand2.png" className="w-9" /></h2>
                             <p className="text-[#9b9da7] text-sm font-light">{t("Let’s Enter your data to continue use healthy 24 services")}</p>
