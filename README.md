@@ -1,7 +1,7 @@
-This is a simple demo on how to use @react-pdf/renderer inside a web worker.
+##Healthy 24
 
-The demo explicitly doesn't use debouncing to show the non blocking nature of a web worker.
+The Doctor's Office Management System enables doctors to efficiently handle appointments, manage patient records, and maintain detailed medical histories, streamlining the administrative aspects of healthcare for improved patient care and organizational efficiency.
 
+#Getting Started
 
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/github/shkreios/vite-react-pdf-renderer-web-worker)
+[View Home page ⚡️](https://healthy-24.vercel.app/home)
