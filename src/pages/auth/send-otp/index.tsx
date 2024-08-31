@@ -1,11 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { Helmet } from "react-helmet"
 import { useFormik } from "formik"
-import { Icon } from "@iconify/react";
-import { ActionIcon, Button, Checkbox, PinInput, Space, TextInput } from "@mantine/core"
-import { Carousel } from '@mantine/carousel'
-import '@mantine/carousel/styles.css'
-import { IconBrandFacebookFilled, IconBrandGoogleFilled, IconBrandTelegram } from "@tabler/icons-react";
+import { Button, PinInput } from "@mantine/core"
 import { Link } from "react-router-dom";
 
 export default function Index() {

@@ -2,10 +2,7 @@ import { useTranslation } from "react-i18next"
 import { Helmet } from "react-helmet"
 import { useFormik } from "formik"
 import { Icon } from "@iconify/react";
-import { ActionIcon, Button, Checkbox, Space, TextInput } from "@mantine/core"
-import { Carousel } from '@mantine/carousel'
-import '@mantine/carousel/styles.css'
-import { IconBrandFacebookFilled, IconBrandGoogleFilled, IconBrandTelegram } from "@tabler/icons-react";
+import { Button, Checkbox, Space, TextInput } from "@mantine/core"
 import { Link } from "react-router-dom";
 
 export default function Index() {
@@ -92,10 +89,10 @@ export default function Index() {
                         </div>
                         <div className="flex justify-center flex-col gap-2 py-2">
                             <Button variant="outline" className="w-full flex justify-center gap-3 items-center text-gray-800 hover:text-gray-950 border border-gray-300 bg-[#fbfbfc] hover:bg-[#fdfdff] text-sm" radius={10} size="lg" type="submit">
-                                <IconBrandGoogleFilled style={{ width: '50%', height: '50%' }} stroke={1} /> <span className="mx-2">{t("Sign up with Google")}</span>
+                                <Icon icon={'bi:google'} /> <span className="mx-2">{t("Sign up with Google")}</span>
                             </Button>
                             <Button variant="outline" className="w-full flex justify-center gap-3 items-center text-gray-800 hover:text-gray-950 border border-gray-300 bg-[#fbfbfc] hover:bg-[#fdfdff] text-sm" radius={10} size="lg" type="submit">
-                                <IconBrandFacebookFilled style={{ width: '50%', height: '50%' }} stroke={1} /> <span className="mx-2">{t("Sign up with Facebook")}</span>
+                                <Icon icon={'bi:facebook'} /> <span className="mx-2">{t("Sign up with Facebook")}</span>
                             </Button>
                         </div>
                         <div className="flex justify-center mt-5">
