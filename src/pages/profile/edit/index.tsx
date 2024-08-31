@@ -4,7 +4,6 @@ import HeaderTitle from "../../../components/HeaderTitle";
 import ImageUploading from "react-images-uploading";
 import { useState } from "react";
 import { Button, Space, Textarea, TextInput } from "@mantine/core";
-import { Icon } from "@iconify/react";
 
 export default function Home() {
 

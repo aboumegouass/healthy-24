@@ -10,14 +10,19 @@ import MedicalHistoryPage from '../pages/medical-history'
 import LoginLayout from "./LoginLayout"
 import ProfilePage from '../pages/profile'
 import RegisterPage from '../pages/auth/register'
+import SendOTPPage from '../pages/auth/send-otp'
+import ResetPasswordPage from '../pages/auth/reset'
 import EditProfilePage from '../pages/profile/edit'
 import MessagesLayout from "./MessagesLayout"
+
 function AppRouter() {
     return (
         <Routes>
             <Route path="" element={<LoginLayout />}>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/auth/register" element={<RegisterPage />} />
+                <Route path="/auth/reset" element={<ResetPasswordPage />} />
+                <Route path="/auth/send-otp" element={<SendOTPPage />} />
             </Route>
             <Route path="/" element={<AdminLayout />}>
                 <Route path={`/home`} element={<Home />} />
