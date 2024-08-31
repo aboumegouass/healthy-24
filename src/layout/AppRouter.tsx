@@ -9,6 +9,7 @@ import MessageDetailsPage from '../pages/messages/message'
 import MedicalHistoryPage from '../pages/medical-history'
 import LoginLayout from "./LoginLayout"
 import ProfilePage from '../pages/profile'
+import EditProfilePage from '../pages/profile/edit'
 import MessagesLayout from "./MessagesLayout"
 function AppRouter() {
     return (
@@ -25,6 +26,7 @@ function AppRouter() {
                 </Route>
                 <Route path={`/medical-history`} element={<MedicalHistoryPage />} />
                 <Route path={`/profile`} element={<ProfilePage />} />
+                <Route path={`/profile/edit`} element={<EditProfilePage />} />
                 <Route path={`/patients-list/:id`} element={<PatientsDetails />} />
             </Route>
         </Routes>
