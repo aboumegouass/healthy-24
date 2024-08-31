@@ -25,7 +25,7 @@ function AppointmentCard({ item }: { item: AppointmentType }) {
                         className="text-[10px] w-full font-normal px-1"
                         size="sm"
                     >
-                        <span className="max-sm:hidden">{t("Decline Appointment")}</span>
+                        {t("Decline Appointment")}
                     </Button>
                 </div>
                 <div>
@@ -36,7 +36,7 @@ function AppointmentCard({ item }: { item: AppointmentType }) {
                         className="text-[10px] w-full font-normal px-1"
                         size="sm"
                     >
-                        <span className="max-sm:hidden">{t("Accept Appointment")}</span>
+                        {t("Accept Appointment")}
                     </Button>
                 </div>
             </div>

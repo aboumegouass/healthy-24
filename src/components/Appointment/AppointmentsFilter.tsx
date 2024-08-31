@@ -23,7 +23,7 @@ function AppointmentsFilter() {
                     className="text-xs flex items-center gap-2 font-medium"
                     size="sm"
                 >
-                    <span className="max-sm:hidden">{"Jan 16, 2023"}</span>
+                    {"Jan 16, 2023"}
                 </Button>
                 <ActionIcon.Group>
                     <ActionIcon variant="default" size="lg" aria-label="Gallery">
