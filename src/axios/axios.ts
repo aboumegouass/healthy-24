@@ -1,12 +1,9 @@
 import axios from 'axios'
-
 export const axiosAPI = () => {
-
     return axios.create({
-        baseURL: 'https://staging.raabit.dev/v1',
+        baseURL: process.env.NODE_ENV !== 'production' ? process.env.BASE_URL_DEV : process.env.BASE_URL_PROD,
         headers: {
             Accept: 'application/json',
-            'Accept-Language': 'ar',
         },
     });
 }

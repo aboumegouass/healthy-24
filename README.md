@@ -9,6 +9,29 @@ To run the project in development mode
 
 To intergration the interface with the backend, you can first create a file, for example **_patients.ts_**, called something like this in the `/src/axios` folder, and then create a file **_patients.ts_** in the `/src/query` folder.
 
+### Update your `/.env`
+
+```batch
+BASE_URL_PROD=https://api.sample.com/v1
+BASE_URL_DEV=http://localhost/api/
+FRONTEND_FOLDER=/
+```
+
+### This your axios.ts file `/src/axios/axios.ts`
+
+```tsx
+import axios from 'axios';
+export const axiosAPI = () => {
+  return axios.create({
+    baseURL:
+      process.env.NODE_ENV !== 'production' ? process.env.BASE_URL_DEV : process.env.BASE_URL_PROD,
+    headers: {
+      Accept: 'application/json',
+    },
+  });
+};
+```
+
 ### `/src/axios/patients.ts`
 
 ```tsx
