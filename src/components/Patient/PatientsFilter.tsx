@@ -4,7 +4,7 @@ import { t } from "i18next"
 
 function PatientsFilter() {
     return (
-        <div className='flex items-center gap-2 justify-between'>
+        <div className='flex items-center justify-between gap-2'>
             <div>
                 <TextInput
                     placeholder={t("Search for something")}
@@ -19,19 +19,20 @@ function PatientsFilter() {
                     variant="light"
                     color="#192252"
                     radius={10}
-                    className="text-xs flex items-center gap-1 font-medium"
+                    className="flex items-center gap-2 text-xs font-medium"
                     size="lg"
                 >
-                    <Icon className="w-4 h-4" icon={'solar:download-linear'} /><span className="max-sm:hidden">{t("Download Report")}</span>
+                    <span><Icon className="w-4 h-4 mx-1" icon={'solar:download-linear'} /></span>
+                    <span className="max-sm:hidden">{t("Download Report")}</span>
                 </Button>
                 <Button
                     variant="light"
                     color="#192252"
                     radius={10}
-                    className="text-xs flex items-center gap-1 font-medium"
+                    className="flex items-center gap-1 text-xs font-medium"
                     size="lg"
                 >
-                    <Icon className="w-4 h-4" icon={'solar:filter-outline'} /> <span className="max-sm:hidden">{t("Filter")}</span>
+                    <Icon className="w-4 h-4 mx-1" icon={'solar:filter-outline'} /> <span className="max-sm:hidden">{t("Filter")}</span>
                 </Button>
             </div>
         </div>

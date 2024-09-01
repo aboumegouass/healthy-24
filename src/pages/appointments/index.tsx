@@ -1,13 +1,16 @@
 import HeaderTitle from "../../components/HeaderTitle";
 import { t } from "i18next";
-import PatientsFilter from "../../components/Patient/PatientsFilter";
 import { Helmet } from "react-helmet";
 import AppointmentCard from "../../components/Appointment/AppointmentCard";
 import { generateFakedAppointments } from "../../utils/makeData";
 import AppointmentsFilter from "../../components/Appointment/AppointmentsFilter";
 import { Divider, Pagination, Space } from "@mantine/core";
+import AppointmentsScheduler from "../../components/Appointment/AppointmentsScheduler";
+import { useState } from "react";
 
 export default function Home() {
+    const [isScheduler, setIsScheduler] = useState(2)
+
     const getAppointments = generateFakedAppointments()
     return (
         <>
@@ -21,19 +24,26 @@ export default function Home() {
                     uppercase
                     title="Appointments"
                 />
-                <AppointmentsFilter />
-                {getAppointments?.map((patient) => (
+                <AppointmentsFilter
+                    isScheduler={isScheduler}
+                    setIsScheduler={setIsScheduler}
+                />
+                {isScheduler == 1 ? <AppointmentsScheduler /> :
                     <>
-                        <p className="text-xs font-bold opacity-70 text-center my-4 text-blue-600">{patient.date}</p>
-                        <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-4 mt-4">
-                            {patient?.data?.map((item) => (
-                                <div key={item.id}>
-                                    <AppointmentCard item={item} />
+                        {getAppointments?.map((patient) => (
+                            <>
+                                <p className="my-4 text-xs font-bold text-center text-blue-600 opacity-70">{patient.date}</p>
+                                <div className="grid grid-cols-3 gap-4 mt-4 max-sm:grid-cols-1">
+                                    {patient?.data?.map((item) => (
+                                        <div key={item.id}>
+                                            <AppointmentCard item={item} />
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </>
+                        ))}
                     </>
-                ))}
+                }
                 <Space h={'lg'} />
                 <Divider />
                 <Space h={'lg'} />

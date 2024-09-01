@@ -2,9 +2,16 @@ import { Icon } from '@iconify/react'
 import { ActionIcon, Button, TextInput } from '@mantine/core'
 import { t } from 'i18next'
 
-function AppointmentsFilter() {
+function AppointmentsFilter({
+    isScheduler,
+    setIsScheduler
+}:
+    {
+        isScheduler: number
+        setIsScheduler: (isScheduler: number) => void
+    }) {
     return (
-        <div className='flex items-center gap-2 justify-between'>
+        <div className='flex items-center justify-between gap-2'>
             <div>
                 <TextInput
                     placeholder={t("Search for something")}
@@ -20,17 +27,17 @@ function AppointmentsFilter() {
                     color="#192252"
                     radius={4}
                     rightSection={<Icon icon={'ph:caret-down'} />}
-                    className="text-xs flex items-center gap-2 font-medium"
+                    className="flex items-center gap-2 text-xs font-medium"
                     size="sm"
                 >
                     {"Jan 16, 2023"}
                 </Button>
                 <ActionIcon.Group>
-                    <ActionIcon variant="default" size="lg" aria-label="Gallery">
+                    <ActionIcon variant={isScheduler == 1 ? "filled" : "default"} size="lg" onClick={() => setIsScheduler(1)} aria-label="Gallery">
                         <Icon icon={'solar:calendar-line-duotone'} />
                     </ActionIcon>
 
-                    <ActionIcon variant="filled" size="lg" aria-label="Likes">
+                    <ActionIcon variant={isScheduler == 2 ? "filled" : "default"} onClick={() => setIsScheduler(2)} size="lg" aria-label="Likes">
                         <Icon icon={'lucide:settings-2'} />
                     </ActionIcon>
                 </ActionIcon.Group>
