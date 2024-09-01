@@ -3,9 +3,10 @@ import { Helmet } from "react-helmet"
 import { useFormik } from "formik"
 import { Icon } from "@iconify/react";
 import { Button, Checkbox, Space, TextInput } from "@mantine/core"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Index() {
+    const navigate = useNavigate()
     const { t } = useTranslation()
     const formik = useFormik({
         initialValues: {
@@ -14,6 +15,7 @@ export default function Index() {
         },
         onSubmit: async (values) => {
             console.log(values);
+            navigate('/home')
         }
     })
     return (
@@ -57,7 +59,7 @@ export default function Index() {
                                     classNames={{ input: "ring-1 ring-slate-300 focus:ring-1 focus:ring-gray-800", label: 'mb-0' }}
                                 />
                             </div>
-                            <div className="flex justify-between mt-3 items-center">
+                            <div className="flex items-center justify-between mt-3">
                                 <Checkbox
                                     size="xs"
                                     label={t("Remember me")}
@@ -75,7 +77,7 @@ export default function Index() {
                         <div className="py-2 my-3 border-t border-t-gray-100">
                             <h1 className="text-xs font-bold text-center uppercase opacity-75 text-[#192252]">{t("Or")}</h1>
                         </div>
-                        <div className="flex justify-center flex-col gap-2 py-2">
+                        <div className="flex flex-col justify-center gap-2 py-2">
                             <Button variant="outline" className="w-full flex justify-center gap-3 items-center text-gray-800 hover:text-gray-950 border border-gray-300 bg-[#fbfbfc] hover:bg-[#fdfdff] text-sm" radius={10} size="lg" type="submit">
                                 <Icon icon={'bi:google'} /> <span className="mx-2">{t("Sign in with Google")}</span>
                             </Button>
@@ -91,11 +93,11 @@ export default function Index() {
                 <div className="w-1/2 max-sm:hidden">
                     <div className="flex relative bg-[#56CCF2] overflow-hidden justify-center h-[100vh]">
                         <div className="p-6 px-20">
-                            <p className="text-white font-bold mb-4 text-xl text-center justify-center flex items-center gap-2">
+                            <p className="flex items-center justify-center gap-2 mb-4 text-xl font-bold text-center text-white">
                                 <span>{t("We give the best experience")}</span>
                                 <img src="/image_2024-08-31_17-57-27.png" className="w-8" />
                             </p>
-                            <p className="text-white font-light text-base text-center flex items-center gap-2">
+                            <p className="flex items-center gap-2 text-base font-light text-center text-white">
                                 <span>{t("Dedicated virtual consulting platform for docotrs and patients to help them consult across vatious channels")}</span>
                             </p>
                         </div>
